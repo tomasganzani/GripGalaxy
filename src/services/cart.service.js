@@ -1,9 +1,9 @@
 import Services from "./service.manager.js";
-import { prodDao } from "../daos/mongodb/product.dao.js";
+import { cartDao } from "../dao/mongodb/cart.dao.js";
 
 class CartService extends Services {
     constructor(){
-        super(prodDao);
+        super(cartDao);
     }
 }
 
