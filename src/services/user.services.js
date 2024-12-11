@@ -11,6 +11,7 @@ class UserService extends Services {
 
   generateToken = (user) => {
     const payload = {
+      id: user._id,
       first_name: user.first_name,
       last_name: user.last_name,
       email: user.email,
@@ -20,7 +21,7 @@ class UserService extends Services {
 
     return jwt.sign(payload, process.env.SECRET_KEY, { expiresIn: "20m" });
   };
-
+    
   getUserByEmail = async (email) => {
     try {
       return await this.dao.getByEmail(email);

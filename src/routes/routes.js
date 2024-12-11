@@ -2,7 +2,7 @@ import { Router } from "express";
 import userRouter from "./user/user.router.js";
 const router = Router();
 
-router.use("/users", userRouter)
+router.use("/api/users", userRouter)
 
 router.get("/", (req, res) => {
     res.render("home");

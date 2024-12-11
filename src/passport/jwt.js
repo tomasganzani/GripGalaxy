@@ -9,7 +9,7 @@ const verifyToken = async (jwt_payload, done) => {
         if (!user) return done(null, false, { messages: "Usuario inexistente" });
         return done(null, jwt_payload);
     } catch (error) {
-        if (error.name === 'TokenExpiredError') {
+        if (error.name === 'Token Expired Error') {
             return done(null, false, { messages: "Token expirado" });
         }
         return done(error);

@@ -7,6 +7,6 @@ userRouter.post("/login", userController.login)
 
 userRouter.post("/register", userController.register)
 
-userRouter.get("/current", [passportCall('jwtCookies')], userController.info)
+userRouter.get("/session/current", [passportCall('jwtCookies')], userController.info)
 
 export default userRouter
