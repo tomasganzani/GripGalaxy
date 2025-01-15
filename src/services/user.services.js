@@ -1,12 +1,12 @@
 import { createHash, isValidPassword } from "../utils/utils.js";
 import Services from "./service.manager.js";
-import { userDao } from "../dao/mongodb/user.dao.js";
+import persistence from "../dao/persistence.js";
 import jwt from "jsonwebtoken";
 import "dotenv/config";
 
 class UserService extends Services {
   constructor() {
-    super(userDao);
+    super(persistence.userBase);
   }
 
   generateToken = (user) => {

@@ -1,5 +1,6 @@
 export default class Controllers {
     constructor(service) {
+        console.log("Service", service);
         this.service = service;
     }
 

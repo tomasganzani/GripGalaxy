@@ -31,10 +31,6 @@ app.set("view engine", "handlebars");
 app.use(router)
 app.use(errorHandler);
 
-initMongoDB()
-    .then(() => console.log("coenctado a mongodb"))
-    .catch((error) => console.log(error));
-
 app.listen(8080, () => {
     console.log(`Server running on port 8080`);
 });

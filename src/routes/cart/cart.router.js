@@ -1,8 +1,10 @@
 import { Router } from "express";
 import  { cartController }  from "../../controllers/cart.manager.js";
+import purchaseRouter from "./puchase.router.js";
 const cartRouter = Router();
 
-cartRouter.post('/users/:_id/cart', async (req, res) => {
+cartRouter.use('/:id/purchase', purchaseRouter)
+cartRouter.post('/users/:_id/cart', [roleAuth("user")] ,async (req, res) => {
     try {
         const userId = req.params.userId;
         const cart = await cartController.createCart(userId);
